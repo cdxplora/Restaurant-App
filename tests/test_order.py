@@ -2,7 +2,7 @@ import unittest
 from Restaurant_app.menuItem import MenuItem
 from Restaurant_app.order import Order
 
-from pathlib import Path
+
 
 
 class TestOrder(unittest.TestCase):

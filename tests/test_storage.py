@@ -2,7 +2,7 @@ import unittest
 import os
 from storage.json_storage import JSONStorage
 
-from pathlib import Path
+
 
 
 class TestStorage(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 from Restaurant_app.menu import Menu
 from Restaurant_app.menuItem import MenuItem
 
-from pathlib import Path
+
 
 class TestMenu(unittest.TestCase):
 

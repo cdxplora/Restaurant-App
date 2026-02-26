@@ -17,3 +17,13 @@ class FileStorage(Storage):
                 return data.get(key)
         except FileNotFoundError:
             return None
+        
+'''This class:
+
+Saves Python objects in binary format using pickle
+
+Loads them back into real Python objects
+
+Uses abstraction and polymorphism through inheritance
+
+Uses encapsulation to hide implementation details.'''

@@ -6,9 +6,9 @@ class MenuItem:
         self._available = True
 
     
-    def to_dict(self):
+    def to_dict(self):      # I converted the objects into dictionaries for serialization. This allows me to easily save the menu items to a file or database (this time a JSON file) and reconstruct them later.
         return {
-            "name": self._name,
+            "name": self._name,     
             "price": self._price,
             "category": self._category,
             "available": self._available

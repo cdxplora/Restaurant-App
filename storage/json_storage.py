@@ -1,16 +1,18 @@
+from pathlib import Path
+
 import json
-import os
 from .storage import Storage
 
 class JSONStorage(Storage):
 
     def __init__(self, filename):
-        self._filename = filename
+        self._filepath = Path(filename) # Here i converted filename into a Path object
 
     def save(self, key, data):
         all_data = self._read_file()
         all_data[key] = data
-        with open(self._filename, "w") as f:
+
+        with self._filepath.open("w", encoding="utf-8") as f:
             json.dump(all_data, f, indent=4)
 
     def load(self, key):
@@ -18,7 +20,7 @@ class JSONStorage(Storage):
         return all_data.get(key)
 
     def _read_file(self):
-        if not os.path.exists(self._filename):
+        if not self._filepath.exists():
             return {}
-        with open(self._filename, "r") as f:
+        with self._filepath.open("r", encoding="utf-8") as f:
             return json.load(f)
